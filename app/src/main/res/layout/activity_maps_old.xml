@@ -1,0 +1,92 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:id="@+id/fabhide_toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/toolbar" />
+
+
+        <FrameLayout
+            android:id="@+id/nav_contentframe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:background="@android:color/background_light">
+
+
+            <include
+                layout="@layout/fragment_maps"/>
+
+            <include layout="@layout/myfab" />
+
+            <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/myfab_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|center"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/primary_500"
+                    android:orientation="vertical"
+                    android:paddingTop="10dp">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@android:color/primary_text_dark">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/autocomplete_places_from"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center_horizontal"
+                            android:ems="10"
+                            android:hint="FROM"
+                            android:textColor="@android:color/primary_text_dark" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="@android:color/primary_text_dark">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/autocomplete_places_to"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center_horizontal"
+                            android:ems="10"
+                            android:hint="TO"
+                            android:textColor="@android:color/primary_text_dark" />
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/drawer_header"
+        app:menu="@menu/drawer" />
+
+</android.support.v4.widget.DrawerLayout>
